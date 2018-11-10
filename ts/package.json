@@ -4,6 +4,7 @@
   "description": "The twelve days of Christmas",
   "main": "main.ts",
   "scripts": {
+    "start": "ts-node src/main.ts",
     "test": "mocha -r ts-node/register spec/**/*.spec.ts",
     "test:watch": "mocha -r ts-node/register spec/**/*.spec.ts --watch --watch-extensions ts"
   },
