@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/adiessl/12Days/issues"
   },
-  "homepage": "https://github.com/adiessl/12Days#readme"
+  "homepage": "https://github.com/adiessl/12Days#readme",
+  "dependencies": {
+    "typescript": "^3.1.6"
+  }
 }
