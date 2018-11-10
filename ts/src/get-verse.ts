@@ -1,108 +1,34 @@
-// TODO: refactor
+const daysAndPresents: { [day: number]: { numeral: string, present: string } } = {
+  1: { numeral: 'first', present: 'a Partridge in a Pear Tree' },
+  2: { numeral: 'second', present: 'two Turtle Doves' },
+  3: { numeral: 'third', present: 'three French Hens' },
+  4: { numeral: 'fourth', present: 'four Calling Birds' },
+  5: { numeral: 'fifth', present: 'five Golden Rings' },
+  6: { numeral: 'sixth', present: 'six Geese a-Laying' },
+  7: { numeral: 'seventh', present: 'seven Swans a-Swimming' },
+  8: { numeral: 'eighth', present: 'eight Maids a-Milking' },
+  9: { numeral: 'ninth', present: 'nine Ladies Dancing' },
+  10: { numeral: 'tenth', present: 'ten Lords a-Leaping' },
+  11: { numeral: 'eleventh', present: 'eleven Pipers Piping' },
+  12: { numeral: 'twelfth', present: 'twelve Drummers Drumming' },
+};
+
 export function getVerse(day: number): string {
-  if (day === 1) {
-    return 'On the first day of Christmas my true love sent to me\n' +
-      'a Partridge in a Pear Tree.';
-  } else if (day === 2) {
-    return 'On the second day of Christmas my true love sent to me\n' +
-      'two Turtle Doves and\n' +
-      'a Partridge in a Pear Tree.';
-  } else if (day === 3) {
-    return 'On the third day of Christmas my true love sent to me\n' +
-      'three French Hens,\n' +
-      'two Turtle Doves and\n' +
-      'a Partridge in a Pear Tree.';
-  } else if (day === 4) {
-    return 'On the fourth day of Christmas my true love sent to me\n' +
-      'four Calling Birds,\n' +
-      'three French Hens,\n' +
-      'two Turtle Doves and\n' +
-      'a Partridge in a Pear Tree.';
-  } else if (day === 5) {
-    return 'On the fifth day of Christmas my true love sent to me\n' +
-      'five Golden Rings,\n' +
-      'four Calling Birds,\n' +
-      'three French Hens,\n' +
-      'two Turtle Doves and\n' +
-      'a Partridge in a Pear Tree.';
-  } else if (day === 6) {
-    return 'On the sixth day of Christmas my true love sent to me\n' +
-      'six Geese a-Laying,\n' +
-      'five Golden Rings,\n' +
-      'four Calling Birds,\n' +
-      'three French Hens,\n' +
-      'two Turtle Doves and\n' +
-      'a Partridge in a Pear Tree.';
-  } else if (day === 7) {
-    return 'On the seventh day of Christmas my true love sent to me\n' +
-      'seven Swans a-Swimming,\n' +
-      'six Geese a-Laying,\n' +
-      'five Golden Rings,\n' +
-      'four Calling Birds,\n' +
-      'three French Hens,\n' +
-      'two Turtle Doves and\n' +
-      'a Partridge in a Pear Tree.';
-  } else if (day === 8) {
-    return 'On the eighth day of Christmas my true love sent to me\n' +
-      'eight Maids a-Milking,\n' +
-      'seven Swans a-Swimming,\n' +
-      'six Geese a-Laying,\n' +
-      'five Golden Rings,\n' +
-      'four Calling Birds,\n' +
-      'three French Hens,\n' +
-      'two Turtle Doves and\n' +
-      'a Partridge in a Pear Tree.';
-  } else if (day === 9) {
-    return 'On the ninth day of Christmas my true love sent to me\n' +
-      'nine Ladies Dancing,\n' +
-      'eight Maids a-Milking,\n' +
-      'seven Swans a-Swimming,\n' +
-      'six Geese a-Laying,\n' +
-      'five Golden Rings,\n' +
-      'four Calling Birds,\n' +
-      'three French Hens,\n' +
-      'two Turtle Doves and\n' +
-      'a Partridge in a Pear Tree.';
-  } else if (day === 10) {
-    return 'On the tenth day of Christmas my true love sent to me\n' +
-      'ten Lords a-Leaping,\n' +
-      'nine Ladies Dancing,\n' +
-      'eight Maids a-Milking,\n' +
-      'seven Swans a-Swimming,\n' +
-      'six Geese a-Laying,\n' +
-      'five Golden Rings,\n' +
-      'four Calling Birds,\n' +
-      'three French Hens,\n' +
-      'two Turtle Doves and\n' +
-      'a Partridge in a Pear Tree.';
-  } else if (day === 11) {
-    return 'On the eleventh day of Christmas my true love sent to me\n' +
-      'eleven Pipers Piping,\n' +
-      'ten Lords a-Leaping,\n' +
-      'nine Ladies Dancing,\n' +
-      'eight Maids a-Milking,\n' +
-      'seven Swans a-Swimming,\n' +
-      'six Geese a-Laying,\n' +
-      'five Golden Rings,\n' +
-      'four Calling Birds,\n' +
-      'three French Hens,\n' +
-      'two Turtle Doves and\n' +
-      'a Partridge in a Pear Tree.';
-  } else if (day === 12) {
-    return 'On the twelfth day of Christmas my true love sent to me\n' +
-      'twelve Drummers Drumming,\n' +
-      'eleven Pipers Piping,\n' +
-      'ten Lords a-Leaping,\n' +
-      'nine Ladies Dancing,\n' +
-      'eight Maids a-Milking,\n' +
-      'seven Swans a-Swimming,\n' +
-      'six Geese a-Laying,\n' +
-      'five Golden Rings,\n' +
-      'four Calling Birds,\n' +
-      'three French Hens,\n' +
-      'two Turtle Doves and\n' +
-      'a Partridge in a Pear Tree.';
-  } else {
+  if (typeof day !== 'number' || day < 1 || day > 12) {
     throw new Error('Please provide a day between 1 and 12. You provided ' + day + '.');
   }
+
+  const firstLine = `On the ${daysAndPresents[day].numeral} day of Christmas my true love sent to me\n`;
+
+  const dayLines = new Array<number>(day - 1)
+    .fill(0)
+    .map((_, index) => day - index)
+    .map((d) => daysAndPresents[d].present)
+    .join(',\n');
+
+  const middleLines = day !== 1
+    ? `${dayLines} and\n`
+    : '';
+
+  return `${firstLine}${middleLines}${daysAndPresents[1].present}.`;
 }
