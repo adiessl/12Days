@@ -1,0 +1,19 @@
+{
+  "name": "12days",
+  "version": "1.0.0",
+  "description": "The twelve days of Christmas",
+  "main": "main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adiessl/12Days.git"
+  },
+  "author": "a.diessl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adiessl/12Days/issues"
+  },
+  "homepage": "https://github.com/adiessl/12Days#readme"
+}
