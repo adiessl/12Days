@@ -19,14 +19,14 @@
   },
   "homepage": "https://github.com/adiessl/12Days#readme",
   "dependencies": {
-    "typescript": "^3.5.1"
+    "typescript": "^4.2.4"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.7",
+    "@types/mocha": "^8.2.2",
     "chai": "^4.2.0",
-    "mocha": "^6.1.4",
-    "ts-node": "^8.2.0",
-    "tslint": "^5.17.0"
+    "mocha": "^8.3.2",
+    "ts-node": "^9.1.1",
+    "tslint": "^6.1.3"
   }
 }
